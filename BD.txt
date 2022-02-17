@@ -1,0 +1,22 @@
+#include "DigiKeyboard.h"
+
+void setup() {
+  // put your setup code here, to run once:
+  // initialize the digital pin as an output.
+  pinMode(0, OUTPUT); //LED on Model B
+  pinMode(1, OUTPUT); //LED on Model A  or Pro
+}
+
+void lighton(){
+  DigiKeyboard.delay(2000);
+    digitalWrite(0, HIGH);   // turn the LED on (HIGH is the voltage level)
+  digitalWrite(1, HIGH);
+  DigiKeyboard.delay(2000);
+  }
+void loop() {
+  // put your main code here, to run repeatedly:
+  DigiKeyboard.sendKeyStroke(0);
+  lighton();
+  
+  DigiKeyboard.sendKeyStroke(0, MOD_GUI_LEFT);
+}
